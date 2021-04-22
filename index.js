@@ -28,23 +28,17 @@ client.on('ready', () => {
     console.log('Client sudah terhubung');
 });
 
-client.on('message', msg => {
-    if (msg.body == '/keyword') {
-        msg.reply('/hello\n\n/github\n\n/aboutbot');
+client.on('message', message => {
+
+    const command = message.body 
+
+    if (command == '/keyword') {
+        msg.reply('/hello');
     }
 
-    if(msg.body == '/hello') {
+    if(command == '/hello') {
         msg.reply('*[AutoReply]* Hello, World!');
     }
-
-    if(msg.body == '/github') {
-        msg.reply('*[AutoReply]* https://Github.com/Mephysics')
-    }
-
-    if(msg.body == '/aboutbot') {
-        msg.reply('Dev : *Mephysics a.k.a _Ichigoez_*\n\nVersion : *1.0.0*\n\nKeyword : */*\n\nTools : *Node js, Javascript, JSON*')
-    }
-
 });
 
 client.initialize();
